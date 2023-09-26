@@ -10,7 +10,7 @@ export default function IndexPage() {
           </h1>
           <p className="max-w-[64rem] text-muted-foreground sm:text-xl">
             `create-sorosan-app` is your one-stop solution for effortlessly launching
-            your web3 projects on Soroban. Whether you're a seasoned developer on Stellar
+            your web3 projects on Soroban. Whether you&#39;re a seasoned developer on Stellar
             or just starting out, Sorosan is powerful SDK that empowers you to
             kickstart your web applications with speed and precision.
           </p>
