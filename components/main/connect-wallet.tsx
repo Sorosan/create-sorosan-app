@@ -13,18 +13,20 @@ export const ConnectWallet = ({ className, ...props }: ConnectWalletProps) => {
     const { sdk } = useSorosanSDK();
     const [address, setAddress] = useState("");
 
-    useEffect(() => {
-        (async () => {
-            if (await sdk.login()) {
-                console.log(sdk.publicKey);
-                setAddress(sdk.publicKey);
-            }
-        })();
-    }, []);
+    // useEffect(() => {
+    //     (async () => {
+    //         // if (await sdk.login()) {
+    //         //     console.log(sdk.publicKey);
+    //         //     setAddress(sdk.publicKey);
+    //         // }
+    //     })();
+    // }, []);
 
     const connect = async () => {
+        console.log("Connecting Wallet ...")
         try {
             const isValid = await sdk.connectWallet();
+            console.log("Connect Wallet Status: ", isValid);
             setAddress(sdk.publicKey);
         } catch (e) {
             console.log(e);

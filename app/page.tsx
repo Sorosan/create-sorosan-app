@@ -1,3 +1,5 @@
+"use client"
+
 import { Page } from "@/components/main/page"
 import { siteConfig } from "@/config/site"
 
