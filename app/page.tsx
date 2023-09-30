@@ -1,4 +1,5 @@
 import { Page } from "@/components/main/page"
+import { siteConfig } from "@/config/site"
 
 export default function IndexPage() {
   return (
@@ -15,10 +16,13 @@ export default function IndexPage() {
             kickstart your web applications with speed and precision.
           </p>
           <div className="space-x-4">
-            <a className="inline-flex items-center justify-center text-sm font-medium transition-colors focus-visible:outline-none focus-visible:ring-2 focus-visible:ring-ring focus-visible:ring-offset-2 disabled:opacity-50 disabled:pointer-events-none ring-offset-background bg-primary text-primary-foreground hover:bg-primary/90 h-11 px-8 rounded-md" href="/login">
+            <a className="inline-flex items-center justify-center text-sm font-medium transition-colors focus-visible:outline-none focus-visible:ring-2 focus-visible:ring-ring focus-visible:ring-offset-2 disabled:opacity-50 disabled:pointer-events-none ring-offset-background bg-primary text-primary-foreground hover:bg-primary/90 h-11 px-8 rounded-md" 
+              href="#">
               Get Started
             </a>
-            <a target="_blank" rel="noreferrer" className="inline-flex items-center justify-center text-sm font-medium transition-colors focus-visible:outline-none focus-visible:ring-2 focus-visible:ring-ring focus-visible:ring-offset-2 disabled:opacity-50 disabled:pointer-events-none ring-offset-background border border-input hover:bg-accent hover:text-accent-foreground h-11 px-8 rounded-md" href="https://github.com/shadcn/taxonomy">
+            <a target="_blank" rel="noreferrer"
+              className="inline-flex items-center justify-center text-sm font-medium transition-colors focus-visible:outline-none focus-visible:ring-2 focus-visible:ring-ring focus-visible:ring-offset-2 disabled:opacity-50 disabled:pointer-events-none ring-offset-background border border-input hover:bg-accent hover:text-accent-foreground h-11 px-8 rounded-md"
+              href={siteConfig.links.github}>
               GitHub
             </a>
           </div>

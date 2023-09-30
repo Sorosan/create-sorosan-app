@@ -16,14 +16,19 @@ export const ConnectWallet = ({ className, ...props }: ConnectWalletProps) => {
     useEffect(() => {
         (async () => {
             if (await sdk.login()) {
+                console.log(sdk.publicKey);
                 setAddress(sdk.publicKey);
             }
         })();
     }, []);
 
     const connect = async () => {
-        const isValid = await sdk.connectWallet();
-        console.log(isValid);
+        try {
+            const isValid = await sdk.connectWallet();
+            setAddress(sdk.publicKey);
+        } catch (e) {
+            console.log(e);
+        }
     }
 
     const disconnect = () => {
@@ -32,7 +37,7 @@ export const ConnectWallet = ({ className, ...props }: ConnectWalletProps) => {
 
     return (
         <Button className={className}
-            onClick={address ? connect : disconnect} {...props}
+            onClick={connect} {...props}
         >
             {address ? sdk.util.mask(address) : "Connect Wallet"}
         </Button>

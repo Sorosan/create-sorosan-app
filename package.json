@@ -1,7 +1,7 @@
 {
-  "name": "next-template",
-  "version": "0.0.2",
-  "private": true,
+  "name": "create-sorosan-app",
+  "version": "0.0.1",
+  "private": false,
   "scripts": {
     "dev": "next dev",
     "build": "next build",
@@ -15,7 +15,7 @@
   },
   "dependencies": {
     "@radix-ui/react-slot": "^1.0.2",
-    "@sorosan-sdk/react": "^0.0.3",
+    "@sorosan-sdk/react": "^0.0.6",
     "class-variance-authority": "^0.4.0",
     "clsx": "^1.2.1",
     "lucide-react": "0.105.0-alpha.4",

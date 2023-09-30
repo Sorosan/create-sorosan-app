@@ -5,16 +5,16 @@ export const siteConfig = {
   mainNav: [
     {
       title: "Doc",
-      href: "/",
+      href: "https://sorosan.github.io/sorosan-doc",
     },
     {
       title: "Support",
-      href: "/",
+      href: "https://github.com/Sorosan",
     },
   ],
   links: {
-    twitter: "/",
-    github: "/",
-    docs: "/",
+    twitter: "",
+    github: "https://github.com/Sorosan/create-sorosan-app",
+    docs: "https://sorosan.github.io/sorosan-doc/",
   },
 }
