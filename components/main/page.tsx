@@ -22,7 +22,7 @@ export const Page = ({ }: PageProps) => {
             console.log(health);
             setStatus(health.status);
         })();
-    }, []);
+    }, [sdk.server]);
 
     return (
         <div>
@@ -56,7 +56,7 @@ interface ComponentSectionProps extends
 const ComponentSection = ({ title, children }: ComponentSectionProps) => {
     return (
         <section className="my-16">
-            <div className="text-xl font-bold my-4">{title}</div>
+            <div className="my-4 text-xl font-bold">{title}</div>
             {children}
             <hr className="my-4" />
         </section>

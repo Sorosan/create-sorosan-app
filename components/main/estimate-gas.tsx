@@ -41,7 +41,10 @@ export const EstimateGas = ({ className, ...props }: EstimateGasProp) => {
                 {isLoading ? "Estimating ..." : "Try it out"}
             </Button>
 
-            <div className="text-xl font-bold my-4">Estimated Gas: {estimatedGas} XLM</div>
+            <div className="my-4">
+                <div>mint(&quot;GCZIJ6IVR2GXZDRZUEXY72I6OC5MPYW4I2Q7CC332SNSE274SZFILR76&quot;, 10000000)</div>
+                <div className="text-xl font-bold">Estimated Gas: {estimatedGas} XLM</div>
+            </div>
         </div>
     );
 };

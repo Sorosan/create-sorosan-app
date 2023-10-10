@@ -33,7 +33,7 @@ export const DeployToken = ({ className, }: DeployTokenProp) => {
                 {isLoading ? "Deploying ..." : message}
             </Button>
 
-            <div className="text-xl font-bold my-4">Contract Address: {sdk.util.toContractAddress(contractId)}</div>
+            <div className="my-4 text-xl font-bold">Contract Address: {sdk.util.toContractAddress(contractId)}</div>
         </div>
     );
 };

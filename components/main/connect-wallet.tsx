@@ -1,9 +1,9 @@
 "use client";
 
 import { useSorosanSDK } from "@sorosan-sdk/react";
-import { useEffect, useState } from "react";
+import { useState } from "react";
 import { Button } from "../ui/button";
-import { disconnect } from "process";
+import { getPublicKey } from "@stellar/freighter-api";
 
 interface ConnectWalletProps extends
     React.HTMLAttributes<HTMLButtonElement> {
@@ -23,16 +23,17 @@ export const ConnectWallet = ({ className, ...props }: ConnectWalletProps) => {
     // }, []);
 
     const connect = async () => {
-        console.log("Connecting Wallet ...")
         try {
-            const isValid = await sdk.connectWallet();
-            console.log("Connect Wallet Status: ", isValid);
-            setAddress(sdk.publicKey);
-        } catch (e) {
-            console.log(e);
+            // const connected = await sdk.connectWallet();
+            const publicKey = await getPublicKey();
+
+            const address = await sdk.publicKey || publicKey;
+            console.log(address);
+            setAddress(address);
+        } catch (error) {
+            console.log(error);
         }
     }
-
     const disconnect = () => {
         setAddress("");
     }
