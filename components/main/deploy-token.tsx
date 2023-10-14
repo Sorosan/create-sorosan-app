@@ -20,10 +20,17 @@ export const DeployToken = ({ className, }: DeployTokenProp) => {
         if (!await sdk.login()) {
             setMessage("Please connect wallet first");
         }
-        setIsLoading(true);
-        const contractId = await sdk.token.deploy();
 
-        setContractId(contractId);
+        setIsLoading(true);
+
+        try {
+            const contractId = await sdk.token.deploy();
+            setContractId(contractId);
+        } catch (error: any) {
+            console.error(error);
+            setMessage("Error: Please connect wallet or try again");
+        }
+
         setIsLoading(false);
     }
 

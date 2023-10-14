@@ -34,6 +34,7 @@ export const ConnectWallet = ({ className, ...props }: ConnectWalletProps) => {
             console.log(error);
         }
     }
+    
     const disconnect = () => {
         setAddress("");
     }
